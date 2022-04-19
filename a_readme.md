@@ -8,3 +8,4 @@
 - Pointers to Function
 - Object like Macros
 - function like macros
+- We love C
