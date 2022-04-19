@@ -13,7 +13,7 @@ What you should learn from this project:
 ---
 
 ## printf()
-The printf project is a collaboration between Jonathan Abayie Boahene - [Abayie](https://github.com/Abayie) and Degbor Johnson - [jo-dev123](https://github.com/jo-dev123), actual students of Software Engineering at ALX School, wHere a function named "_printf" imitates the actual "printf" command located in the stdio.h library. It contains some of the basic features and functions found in the manual 3 of "printf".
+The printf project is a collaboration between Jonathan Abayie Boahene - [Abayie](https://github.com/Abayie) and Degbor Johnson - [jo-dev123](https://github.com/jo-dev123), actual students of Software Engineering at ALX School, where a function named "_printf" imitates the actual "printf" command located in the stdio.h library. It contains some of the basic features and functions found in the manual 3 of "printf".
 	
 _printf() is a function that performs formatted output conversion and print data. Its prototype is the following:
 
@@ -103,7 +103,7 @@ Own Printf Function That Performs Formatted Output Conversion And Print Data.
 ------------
 
 ### main.h
-Header File Were All Prototypes Are Saved.
+Header File Where All Prototypes Are Saved.
 
 ------------
 
