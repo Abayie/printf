@@ -6,3 +6,4 @@
 - functions
 - Pointers
 - Pointers to Function
+- Object like identifiers
