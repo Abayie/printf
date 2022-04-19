@@ -6,5 +6,5 @@
 - functions
 - Pointers
 - Pointers to Function
-- Object like identifiers
+- Object like Macros
 - function like macros
