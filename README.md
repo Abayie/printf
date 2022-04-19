@@ -1,7 +1,19 @@
+s team project is part of the first year curriculum of ALX School.
 ![](https://www.alxafrica.com/)
+## Description
+_printf replicates the C standard library printf() function.
+
+What you should learn from this project:
+
+* How to use git in a team setting
+* Applying variadic functions to a big project
+* The complexities of printf
+* Managing a lot of files and finding a good workflow
+
+---
 
 ## printf()
-The printf project is a collaboration between Jonathan Abayie Boahene -[Abayie](https://github.com/Abayie) and Degbor Johnson - [jo-dev123](https://github.com/jo-dev123), actual students of Software Engineering at ALX School, wHere a function named "_printf" imitates the actual "printf" command located in the stdio.h library. It contains some of the basic features and functions found in the manual 3 of "printf".
+The printf project is a collaboration between Jonathan Abayie Boahene - [Abayie](https://github.com/Abayie) and Degbor Johnson - [jo-dev123](https://github.com/jo-dev123), actual students of Software Engineering at ALX School, wHere a function named "_printf" imitates the actual "printf" command located in the stdio.h library. It contains some of the basic features and functions found in the manual 3 of "printf".
 	
 _printf() is a function that performs formatted output conversion and print data. Its prototype is the following:
 
@@ -43,6 +55,14 @@ If the program runs successfully, the **return value** is the amount of chars pr
 | h | Prints a short int or unsigned short int | i, d, o, u, x and X |
 
 ------------
+
+## Usage
+* Prints a string to the standard output, according to a given format
+* All files were created and compiled on Ubuntu 20.04.4 LTS using GCC 9.3.0 with the command ```gcc -Wall -Werror -Wextra -pedantic *.c```
+* Returns the number of characters in the output string on success, -1 otherwise
+* Call it this way: ```_printf("format string", arguments...)``` where ```format string``` can contain conversion specifiers and flags,
+along with regular characters
+
 
 ## Examples
 
@@ -87,244 +107,115 @@ Header File Were All Prototypes Are Saved.
 
 ------------
 
-### get_print_func.c
-Pointer To A Function That Selects The Correct Function To Perform The Operation.
+### [0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life](./_printf.c)
+* Write a function that produces output according to format.
+  - c : converts input into a character
+  - s : converts input into a string
+------------
+
+### [1. Education is when you read the fine print. Experience is what you get if you don't](./print_nums.c)
+* Handle the following conversion specifiers:
+  - d : converts input into a base 10 integer
+  - i : converts input into an integer
 
 ------------
 
-### print_buf.c
-Function That Prints The Buffer.
+### [2. Just because it's in print doesn't mean it's the gospel](./man_3_printf)
+* Create a man page for your function
 
 ------------
 
-### handl_buf.c
-Function That Concatenates The Buffer Characters.
+### [3. With a face like mine, I do better in print](./print_bases.c)
+* Handle the following conversion specifiers:
+  - b : the unsigned int argument is converted to binary
 
 ------------
 
-### print_chr.c
-Function That Writes The Character C To Stdout.
-```c
-/* Indetifier : %c */
-```
+### [4. What one has not experienced, one will never understand in print](./print_bases.c)
+* Handle the following conversion specifiers:
+  - u : converts the input into an unsigned integer
+  - o : converts the input into an octal number
+  - x : converts the input into a hexadecimal number
+  - X : converts the input into a hexadecimal number with capital letters
 
 ------------
 
-### print_str.c
-Function That Writes The String To Stdout.
-```c
-/* Indetifier : %s */
-```
+
+### [5. Nothing in fine print is ever good news](./write_funcs.c)
+* Use a local buffer of 1024 chars in order to call write as little as possible.
 
 
 ------------
-### print_int.c
-Function That Prints An Integer.
-```c
-/* Indetifier : %i or %d */
-```
+
+### [6. My weakness is wearing too much leopard print](./print_custom.c)
+* Handle the following custom conversion specifier:
+  - S : prints the string
+  - Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
 
 ------------
 
-### print_bnr.c
-Function That Prints Decimal In Binary.
-```c
-/* Indetifier : %b */
-```
+### [7. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print](./print_address.c)
+* Handle the following conversion specifier:
+  - p : int input is converted to a pointer address
+
 
 ------------
 
-### print_oct.c
-Function That Prints Decimal In Octal.
-```c
-/* Indetifier : %o */
-```
+### [8. The big print gives and the small print takes away](./get_flag.c)
+* Handle the following flag characters for non-custom conversion specifiers:
+  - \+ : adds a \+ in front of signed positive numbers and a \- in front of signed negative numbers
+  - space : same as \+, but adds a space (is overwritten by \+)
+  - \# : adds a 0 in front of octal conversions that don't begin with one, and a 0x or 0X for x or X conversions
 
 ------------
 
-### print_hex.c
-Function That Prints Decimal In Hexadecimal.
-```c
-/* Indetifier : %x */
-```
+### [9. Sarcasm is lost in print]
+* Handle the following length modifiers for non-custom conversion specifiers:
+  - l : converts d, i, u, o, x, X conversions in short signed or unsigned ints
+  - h : converts d, i, u, o, x, X conversions in long signed or unsigned ints
 
 ------------
 
-### print_upx.c
-Function That Prints Decimal In Uppercase Hexadecimal.
-```c
-/* Indetifier : %X */
-```
+### [10. Print some money and give it to us for the rain forests]
+* Handle the field width for non-custom conversion specifiers.
 
 ------------
 
-### print_usr.c
-Function That Prints A String And Values Of Non-Printed Chars.
-```c
-/* Indetifier : %S */
-```
+### [11. The negative is the equivalent of the composer's score, and the print the performance]
+* Handle the precision for non-custom conversion specifiers.
 
 ------------
 
-### print_unt.c
-Function That Prints An Unsigned Integer.
-```c
-/* Indetifier : %u */
-```
+### [12. It's depressing when you're still around and your albums are out of print]
+* Handle the 0 flag character for non-custom conversion specifiers.
+------------
+
+### [13. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection]
+* Handle the - flag character for non-custom conversion specifiers.
+------------
+
+### [14. Print is the sharpest and the strongest weapon of our party](./print_custom.c)
+* Handle the following custom conversion specifier:
+  - r : prints the reversed string
 
 ------------
 
-### print_rev.c
-Function That Writes The String To Stdout In Reverse.
-```c
-/* Indetifier : %r */
-```
+### [15. The flood of print has turned reading into a process of gulping rather than savoring](./print_custom.c)
+* Handle the following custom conversion specifier:
+  - R : prints the rot13'ed string
+
 
 ------------
 
-### print_rot.c
-Function That Writes The String To Stdout In Rot13.
-```c
-/* Indetifier : %R */
-```
+### [16. * ]
+* All the above options work well together.
 
-------------
-
-### print_add.c
-Function That Prints The Address Of An Input Variable.
-```c
-/* Indetifier : %p */
-```
-
-------------
-
-### print_long_oct.c
-Function That Prints Long Decimal Number In Octal.
-```c
-/* Indetifier : %lo */
-```
-
-------------
-
-### print_long_hex.c
-Function That Prints Long Decimal Number In Hexadecimal.
-```c
-/* Indetifier : %lx */
-```
-
-------------
-
-### print_long_int.c
-Function That Prints  A Long Integer.
-```c
-/* Indetifier : %li */
-```
-
-------------
-
-### print_long_upx.c
-Function That Prints A Long Decimal In Uppercase Hexadecimal.
-```c
-/* Indetifier : %lX */
-```
-
-------------
-
-### print_long_unt.c
-Function That Prints A Long Unsigned Integer.
-```c
-/* Indetifier : %lu */
-```
-
-------------
-
-### print_short_oct.c
-Function That Prints Short Decimal Number In Octal.
-```c
-/* Indetifier : %ho */
-```
-
-------------
-
-### print_short_hex.c
-Function That Prints Short Decimal Number In Hexadecimal.
-```c
-/* Indetifier : %hx */
-```
-
-------------
-
-### print_short_int.c
-Function That Prints  A Short Integer.
-```c
-/* Indetifier : %hi */
-```
-
-------------
-
-### print_short_upx.c
-Function That Prints A Short Decimal In Uppercase Hexadecimal.
-```c
-/* Indetifier : %hX */
-```
-
-------------
-
-### print_short_unt.c
-Function That Prints A Short Unsigned Integer.
-```c
-/* Indetifier : %hu */
-```
-
-------------
-
-### print_num_hex.c
-Function That Print A Number In Hexadecimal Begining With 0 And x.
-```c
-/* Indetifier : %#x */
-```
-
-------------
-
-### print_num_oct.c
-Function That Prints A Number In Octal Begining With 0 And o.
-```c
-/* Indetifier : %#o */
-```
-
-------------
-
-### print_num_upx.c
-Function That Prints A Number In Uppercase Hexadecimal.
-```c
-/* Indetifier : %#X */
-```
-
-------------
-
-### print_plus_int.c
-Function That Prints An Integer With Plus Symbol.
-```c
-/* Indetifier : %+i */
-```
-
-------------
-
-### print_space_int.c
-Function That Prints An Integer Begining With 0 And u.
-```c
-/* Indetifier : % i */
-```
-
-------------
-
-### ev_print_func.c
-Function That Returns The Amount Of Indetifiers.
 
 ------------
 
 ### Authors
-Jonathan Abayie Boahene and Degbor Johnson.
+**Jonathan Abayie Boahene** [Abayie](https://github.com/Abayie)
+**Degbor Johnson.** [jo-dev123](https://github.com/jo-dev123)
 
 ------------
 
