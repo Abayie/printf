@@ -1,93 +1,76 @@
-#ifndef PRINT_F
-#define PRINT_F
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <limits.h>
 #include <stdlib.h>
-
-#define FLAG_UNSIGNED  2
-#define FLAG_LOWERCASE 1
-
+#include <stdarg.h>
 
 /**
- * struct param_flags - struct containing flags to get
+ * struct flags - struct containing flags to "turn on"
  * when a flag specifier is passed to _printf()
- * @plus_flag: flag for the '+' character
- * @space_flag: flag for the ' ' character
- * @hash_flag: flag for the '#' character
- * @zero_flag: flag for the '0' character
- * @minus_flag: flag for the '-' character
- * @unsign: flag for the unsigned values
- * @width: width of the value
- * @precision: precision of the value
- * @l_mod: length modifier
- * @h_mod: short length modifier
+ * @plus: flag for the '+' character
+ * @space: flag for the ' ' character
+ * @hash: flag for the '#' character
  */
-typedef struct param_flags
+typedef struct flags
 {
-	unsigned int plus_flag		: 1;
-	unsigned int space_flag		: 1;
-	unsigned int hash_flag		: 1;
-	unsigned int h_mod		: 1;
-	unsigned int l_mod		: 1;
-	unsigned int zero_flag		: 1;
-	unsigned int minus_flag		: 1;
-	unsigned int unsign		: 1;
-
-	unsigned int width;
-	unsigned int precision;
-
-} param_func;
+	int plus;
+	int space;
+	int hash;
+} flags_t;
 
 /**
-* struct func_convert - gets structure for the symbols and functions
-*@type: operator symbols
-*@func: the associated function
-*/
-
-typedef struct func_convert
+ * struct printHandler - struct to choose the right function depending
+ * on the format specifier passed to _printf()
+ * @c: format specifier
+ * @f: pointer to the correct printing function
+ */
+typedef struct printHandler
 {
-	char *type;
-	int (*func)(va_list, param_func *);
-} f_convert;
-/*function prototypes*/
+	char c;
+	int (*f)(va_list ap, flags_t *f);
+} ph;
 
+/* print_nums */
+int print_int(va_list l, flags_t *f);
+void print_number(int n);
+int print_unsigned(va_list l, flags_t *f);
+int count_digit(int i);
 
+/* print_bases */
+int print_hex(va_list l, flags_t *f);
+int print_hex_big(va_list l, flags_t *f);
+int print_binary(va_list l, flags_t *f);
+int print_octal(va_list l, flags_t *f);
+
+/* converter */
+char *convert(unsigned long int num, int base, int lowercase);
+
+/* _printf */
 int _printf(const char *format, ...);
-int (*func_parse(char *c))(va_list, param_func *func);
-int print_chars(va_list list, param_func *func);
-int print_strings(va_list list, param_func *func);
-int print_percentage(va_list list, param_func *func);
-int print_integer(va_list list, param_func *func);
-int print_binary(va_list list, param_func *func);
-int print_unsigned_integer(va_list list, param_func *func);
-int print_heX(va_list list, param_func *func);
-int print_hexa(va_list list, param_func *func);
-int print_octal(va_list list, param_func *func);
-int print_stringUpper(va_list list, param_func *func);
-int print_address(va_list list, param_func *func);
-int print_reverse(va_list list, param_func *func);
-int print_rot13(va_list list, param_func *func);
 
-/*putchar function*/
-int _putchar(int c);
+/* get_print */
+int (*get_print(char s))(va_list, flags_t *);
+
+/* get_flag */
+int get_flag(char s, flags_t *f);
+
+/* print_alpha */
+int print_string(va_list l, flags_t *f);
+int print_char(va_list l, flags_t *f);
+
+/* write_funcs */
+int _putchar(char c);
 int _puts(char *str);
 
-/* helper functions */
-int get_flags(char *s, param_func *func);
-int get_digits(int i);
-int is_digit(int c);
-int print_right_shift(char *str, param_func *func);
-int print_num(char *str, param_func *func);
-int get_mods(char *str, param_func *func);
-char *convert_num(long int num, int base, int flags, param_func *func);
-char *get_precision(char *str, param_func *func, va_list list);
-void init_params(param_func *func, va_list list);
-char *get_width(char *str, param_func *func, va_list list);
-int print_range(char *start, char *stop, char *except);
-int print_func(char *s, va_list list, param_func *func);
-int print_left_shift(char *str, param_func *func);
-int _strlen(char *s);
+/* print_custom */
+int print_rot13(va_list l, flags_t *f);
+int print_rev(va_list l, flags_t *f);
+int print_bigS(va_list l, flags_t *f);
+
+/* print_address */
+int print_address(va_list l, flags_t *f);
+
+/* print_percent */
+int print_percent(va_list l, flags_t *f);
+
 #endif
