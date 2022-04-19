@@ -3,4 +3,5 @@
 **The task requires the following**
 - molloc
 - structure
+- functions
 ###
