@@ -1,6 +1,6 @@
-s team project is part of the first year curriculum of ALX School.
 ![](https://www.alxafrica.com/)
 ## Description
+This team project is part of the first year curriculum of ALX School.
 _printf replicates the C standard library printf() function.
 
 What you should learn from this project:
@@ -206,8 +206,8 @@ Header File Were All Prototypes Are Saved.
 
 
 ------------
-
 ### [16. * ]
+
 * All the above options work well together.
 
 
